@@ -1,0 +1,14 @@
+# Fichiers Typst temporaires
+.typst-cache/
+*.aux
+*.log
+
+# Fichiers Python temporaires
+__pycache__/
+*.pyc
+
+# Environnements
+.env
+
+# OS
+.DS_Store
