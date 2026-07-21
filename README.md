@@ -24,6 +24,8 @@ cargo install typst-cli
 # Via Homebrew (macOS/Linux)
 brew install typst
 
+```
+
 ## 📂 Structure du dépôt
 
 ```text
