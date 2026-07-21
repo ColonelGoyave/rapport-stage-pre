@@ -1,10 +1,25 @@
-# Rapport de stage
+# Rapport de Stage de recherche de fin de Master 1 de l'ENSTA Paris – Projet de Recherche (PRe)
 
-Rapport de stage rédigé avec Typst.
+Ce dépôt contient le code source et la structure de rédaction de mon rapport de stage de recherche (fin de M1) d'école d'ingénieurs (ENSTA Paris), effectué dans le domaine de l'astrophysique au Heidelberg Institute for Theoretical Studies (HITS) du 25/05/2026 au 16/08/2026.
 
-## Structure
+## 📌 Présentation du Projet
+* **Élève :** Alexis SPAETH--LEMARCHAND
+* **Établissement :** ENSTA Paris
+* **Sujet :** Flammes de déflagration thermonucléaires dans les supernovae de type Ia
+* **Structure d'accueil :** Heidelberg Institute for Theoretical Studies (HITS)
+* **Tuteurs :** Jean BOISSON (ENSTA Paris) / Prof. Dr. Friedrich K. RÖPKE (HITS)
 
-- main.typ : point d'entrée du document
-- chapitres/ : contenu du rapport
-- figures/ : figures et graphiques
-- references.bib : bibliographie
+---
+
+## 🛠️ Outils & Compilation
+
+Le rapport est rédigé en **[Typst](https://typst.app/)**.
+
+### Prérequis
+Pour installer Typst :
+```bash
+# Via Cargo (Rust)
+cargo install typst-cli
+
+# Via Homebrew (macOS/Linux)
+brew install typst
