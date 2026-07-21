@@ -66,8 +66,8 @@ Les données brutes de simulation représentant plusieurs dizaines de Téraoctet
 
 Toutefois, la chaîne d'analyse et de visualisation est entièrement documentée et disponible :
 
-    Code de simulation Phlegethon : [Dépôt GitHub de Phlegethon (Leidi + (2026))](https://github.com/phlegethon-stellar-hydro/phlegethon)
+* **Code de simulation Phlegethon :** [Dépôt GitHub de Phlegethon (Leidi + (2026))](https://github.com/phlegethon-stellar-hydro/phlegethon)
 
-    Scripts d'analyse : Les scripts Python permettant le post-traitement des données brutes des simulations et qui ont permis la génération des figures du rapport sont situés dans le dossier [`scripts/`](./scripts/).
+* **Scripts d'analyse :** Les scripts Python permettant le post-traitement des données brutes des simulations et qui ont permis la génération des figures du rapport sont situés dans le dossier [`scripts/`](./scripts/).
 
-    Données finales : Les fichiers de données nécessaires aux tracés finaux peuvent être trouvés dans le dossier [`datasets/`](./datasets/).
+* **Données finales :** Les fichiers de données nécessaires aux tracés finaux peuvent être trouvés dans le dossier [`datasets/`](./datasets/).
