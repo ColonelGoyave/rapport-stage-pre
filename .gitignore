@@ -3,6 +3,9 @@
 *.aux
 *.log
 
+# PDF générés par Typst
+main.pdf
+
 # Fichiers Python temporaires
 __pycache__/
 *.pyc
