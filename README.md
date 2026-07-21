@@ -40,6 +40,7 @@ brew install typst
 ├── chapitres/                     # Corps principal du rapport
 │   ├── introduction.typ           # Introduction générale
 │   ├── description-travail.typ    # Présentation du sujet et du cadre de recherche
+├── datasets/                      # Donnees ayant servi a la realisation des derniers graphes et courbes
 │   ├── contribution/              # Travaux réalisés et résultats
 │   │   ├── introduction.typ
 │   │   ├── methodologie.typ
@@ -53,19 +54,18 @@ brew install typst
     ├── glossaire.typ              # Glossaire des termes et acronymes
     └── index.typ                  # Index (optionnel)
 
+```
 
 ## 🔬 Reproductibilité des résultats & Simulations
 
-Les simulations numériques présentées dans ce rapport ont été réalisées avec le code open-source Phlegethon sur le cluster de calcul haute performance (HPC) de l'institut.
-Traitement des données et génération des figures
+Les simulations numériques présentées dans ce rapport ont été réalisées avec le code open-source Phlegethon sur le cluster de calcul haute performance Genoa du HITS.
 
-Les données brutes de simulation représentant plusieurs Téraoctets, elles restent hébergées sur le stockage HPC de l'institut et ne sont pas incluses dans ce dépôt.
+Les données brutes de simulation représentant plusieurs dizaines de Téraoctets, elles restent hébergées sur un des ensemble de stockage du HITS : Basement, et ne sont pas incluses dans ce dépôt.
 
-Toutefois, la chaîne d'analyse et de visualisation est entièrement documentée :
+Toutefois, la chaîne d'analyse et de visualisation est entièrement documentée et disponible :
 
-    Code de simulation : [suspicious link removed] (remplacer par le lien vers le dépôt officiel du code)
+    Code de simulation Phlegethon : [Dépôt GitHub de Phlegethon (Leidi + (2026))](https://github.com/phlegethon-stellar-hydro/phlegethon)
 
-    Scripts d'analyse : Les scripts Python permettant le post-traitement des sorties de simulation et la génération des figures du rapport sont situés dans le dossier scripts/.
+    Scripts d'analyse : Les scripts Python permettant le post-traitement des données brutes des simulations et qui ont permis la génération des figures du rapport sont situés dans le dossier [`scripts/`](./scripts/).
 
-    Données réduites : Les petits fichiers de données extraits (fichiers .csv ou .txt légers) nécessaires aux tracés finaux peuvent être ajoutés dans un dossier data/ (optionnel).
-
+    Données finales : Les fichiers de données nécessaires aux tracés finaux peuvent être trouvés dans le dossier [`datasets/`](./datasets/).
