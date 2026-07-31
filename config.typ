@@ -65,7 +65,7 @@
   )
 
   // Configuration du texte (interligne simple, justification)
-  set text(font: "Liberation Serif", size: 12pt, lang: "fr")
+  set text(font: "Liberation Serif", size: 12pt, lang: "en")
   set par(justify: true, first-line-indent: 1.5cm, leading: 0.8em)
 
   // Style des titres

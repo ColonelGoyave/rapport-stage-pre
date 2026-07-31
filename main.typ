@@ -1,8 +1,8 @@
 #import "config.typ": project
 
 #show: project.with(
-  title: "Flammes de déflagrations thermonucléaires dans les supernovae de type Ia",
-  subtitle: "Etude multiparamétrique 1D sur le programme Phlegethon",
+  title: "Thermonuclear deflagration flames\nin type Ia supernovaes",
+  subtitle: "A 1D multiparametric study on the Phlegethon program",
   author: "Alexis SPAETH--LEMARCHAND",
   promotion: "2027",
   specialite: "Astrophysique / Physique théorique",
@@ -28,14 +28,17 @@
 // Résumé / Abstract + Mots-clés (10 lignes chacun environ)
 #page[
   == Résumé
-  #lorem(80) // Remplacer par votre texte de résumé
 
-  *Mots-clés :* Astrophysique, Exoplanètes, Spectroscopie, Traitement de signal.
+  Les supernovae de type Ia, issues de l'explosion d'une naine blanche en système binaire, sont des _chandelles standard_ utilisées pour la mesure des distances cosmologiques et l'étude de l'énergie noire. Comprendre la physique de leur explosion nécessite une modélisation précise des flammes de déflagration thermonucléaire. Ce travail présente une étude multiparamétrique de la vitesse de ces flammes à l'aide du code d'hydrodynamique stellaire Phlegethon (*REFERENCE Leidi et al., 2026*). En étendant les modèles existants (*REFERENCE Timmes & Woosley, 1992 ; Schwab et al., 2020*), nous avons établi une nouvelle formulation de la vitesse de flamme laminaire en prenant en compte la densité, la composition chimique et la fraction électronique du milieu. Cette extension permet d'étudier la vitesse de déflagration de structures stellaires évolutives spatialement et temporellement.
+
+  *Mots-clés :* Astrophysique, Supernovae de type Ia, Déflagration thermonucléaire, Vitesse de flamme, Réseau thermonucléaire, Naine blanche, Phlegethon.
 
   #v(2em)
 
   == Abstract
-  #lorem(80) // Remplacer par votre résumé en anglais
+  Type Ia supernovae, originating from the explosion of a white dwarf in a binary system, are standard candles used to measure cosmological distances and study dark energy. Understanding the physics of their explosion requires precise modeling of thermonuclear deflagration flames. This work presents a multiparametric study of these flame speeds using the stellar hydrodynamics code Phlegethon (*REFERENCE Leidi et al., 2026*). By extending existing models (*REFERENCE Timmes & Woosley, 1992; Schwab et al., 2020*), we established a new formulation for the laminar flame speed that accounts for the ambient density, chemical composition, and electron fraction of the medium. This extension enables the study of deflagration speeds in stellar structures that evolve both spatially and temporally.
+
+  *Keywords:* Astrophysics, Type Ia supernovae, Thermonuclear deflagration, Flame speed, Nuclear reaction network, White dwarf, Phlegethon.
 
   *Keywords:* Astrophysics, Exoplanets, Spectroscopy, Signal Processing.
 ]
