@@ -27,18 +27,20 @@
 
 // Résumé / Abstract + Mots-clés (10 lignes chacun environ)
 #page[
-  == Résumé
-
-  Les supernovae de type Ia, issues de l'explosion d'une naine blanche en système binaire, sont des _chandelles standard_ utilisées pour la mesure des distances cosmologiques et l'étude de l'énergie noire. Comprendre la physique de leur explosion nécessite une modélisation précise des flammes de déflagration thermonucléaire. Ce travail présente une étude multiparamétrique de la vitesse de ces flammes à l'aide du code d'hydrodynamique stellaire Phlegethon (*REFERENCE Leidi et al., 2026*). En étendant les modèles existants (*REFERENCE Timmes & Woosley, 1992 ; Schwab et al., 2020*), nous avons établi une nouvelle formulation de la vitesse de flamme laminaire en prenant en compte la densité, la composition chimique et la fraction électronique du milieu. Cette extension permet d'étudier la vitesse de déflagration de structures stellaires évolutives spatialement et temporellement.
-
-  *Mots-clés :* Astrophysique, Supernovae de type Ia, Déflagration thermonucléaire, Vitesse de flamme, Réseau thermonucléaire, Naine blanche, Phlegethon.
-
-  #v(2em)
-
+#v(2fr)
   == Abstract
-  Type Ia supernovae, originating from the explosion of a white dwarf in a binary system, are standard candles used to measure cosmological distances and study dark energy. Understanding the physics of their explosion requires precise modeling of thermonuclear deflagration flames. This work presents a multiparametric study of these flame speeds using the stellar hydrodynamics code Phlegethon (*REFERENCE Leidi et al., 2026*). By extending existing models (*REFERENCE Timmes & Woosley, 1992; Schwab et al., 2020*), we established a new formulation for the laminar flame speed that accounts for the ambient density, chemical composition, and electron fraction of the medium. This extension enables the study of deflagration speeds in stellar structures that evolve both spatially and temporally.
+  Type Ia supernovae, originating from the explosion of a white dwarf in a binary system, are standard candles used to measure cosmological distances and study dark energy. Understanding the physics of their explosion requires precise modeling of thermonuclear deflagration flames. This work presents a multiparametric study of these flame speeds using the stellar hydrodynamics code Phlegethon @leidi2026. By extending existing models @timmes1992 @schwab2020, we established a new formulation for the laminar flame speed that accounts for the ambient density, chemical composition, and electron fraction of the medium. This extension enables the study of deflagration speeds in stellar structures that evolve both spatially and temporally.
 
   *Keywords:* Astrophysics, Type Ia supernovae, Thermonuclear deflagration, Flame speed, Nuclear reaction network, White dwarf, Phlegethon.
+
+  #v(1fr)
+
+  == Résumé
+
+  Les supernovae de type Ia, issues de l'explosion d'une naine blanche en système binaire, sont des _chandelles standard_ utilisées pour la mesure des distances cosmologiques et l'étude de l'énergie noire. Comprendre la physique de leur explosion nécessite une modélisation précise des flammes de déflagration thermonucléaire. Ce travail présente une étude multiparamétrique de la vitesse de ces flammes à l'aide du code d'hydrodynamique stellaire Phlegethon @leidi2026. En étendant les modèles existants @timmes1992 @schwab2020, nous avons établi une nouvelle formulation de la vitesse de flamme laminaire en prenant en compte la densité, la composition chimique et la fraction électronique du milieu. Cette extension permet d'étudier la vitesse de déflagration de structures stellaires évolutives spatialement et temporellement.
+
+  *Mots-clés :* Astrophysique, Supernovae de type Ia, Déflagration thermonucléaire, Vitesse de flamme, Réseau thermonucléaire, Naine blanche, Phlegethon.
+#v(2fr)
 ]
 
 // Tables
@@ -59,7 +61,7 @@
 #pagebreak()
 
 // Section Contribution (regroupant les fichiers de votre sous-dossier)
-= Contribution et Travaux Réalisés
+= Contribution
 
 #include "chapitres/contribution/introduction.typ"
 #include "chapitres/contribution/methodologie.typ"
@@ -78,7 +80,7 @@
 // --- BACKMATTER ---
 
 // Bibliographie
-#bibliography("references.bib", title: [Bibliographie], style: "ieee")
+#bibliography("references.bib", title: [Bibliography], style: "apa")
 #pagebreak()
 
 // Glossaire
