@@ -116,7 +116,7 @@
 
   // Annule le retrait de paragraphe uniquement pour la page d'index
   set par(first-line-indent: 0pt)
-  
+
   context {
     let refs = query(<gls-ref>)
     let key-pages = (:)
@@ -165,7 +165,7 @@
   inset: 9pt,
   align: (x, y) => if y == 0 { center + horizon } else { left + top },
   
-  [*English Term (Acronym)*], [*French Translation*], [*Definition*],
+  [*English (Acronym)*], [*French*], [*Definition*],
   
   ..entry-dict.pairs().map(((key, entry)) => (
     [
