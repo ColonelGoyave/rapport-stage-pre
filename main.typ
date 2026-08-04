@@ -1,5 +1,23 @@
 #import "config.typ": project
 
+#import "@preview/glossarium:0.5.0": make-glossary, register-glossary
+
+#import "backmatter/glossaire.typ": setup-glossary-refs
+#import "backmatter/glossaire.typ": gls, glsf, glsl, Gls, Glsf, Glsl
+
+
+// Active la prise en charge des @clé pour le glossaire
+#show: setup-glossary-refs
+
+// ... reste de ton main.typ
+
+// 1. Activer le modèle glossarium sur tout le document
+#show: make-glossary
+
+
+// ... reste de ton main.typ (titre, TOC, etc.)
+
+
 #show: project.with(
   title: "Thermonuclear deflagration flames\nin type Ia supernovaes",
   subtitle: "A 1D multiparametric study on the Phlegethon program",
@@ -29,9 +47,9 @@
 #page[
 #v(2fr)
   == Abstract
-  Type Ia supernovae, originating from the explosion of a white dwarf in a binary system, are standard candles used to measure cosmological distances and study dark energy. Understanding the physics of their explosion requires precise modeling of thermonuclear deflagration flames. This work presents a multiparametric study of these flame speeds using the stellar hydrodynamics code Phlegethon @leidi2026. By extending existing models @timmes1992 @schwab2020, we established a new formulation for the laminar flame speed that accounts for the ambient density, chemical composition, and electron fraction of the medium. This extension enables the study of deflagration speeds in stellar structures that evolve both spatially and temporally.
+  Type Ia supernovae, originating from the explosion of a #glsf("wd") in a binary system, are standard candles used to measure cosmological distances and study dark energy. Understanding the physics of their explosion requires precise modeling of #glsf("deflagration") flames. This work presents a multiparametric study of these flame speeds using the stellar hydrodynamics code Phlegethon @leidi2026. By extending existing models @timmes1992 @schwab2020, we established a new formulation for the #glsf("flame_speed") that accounts for the ambient density, chemical composition, and electron fraction of the medium. This extension enables the study of deflagration flame speeds in stellar structures that evolve both spatially and temporally.
 
-  *Keywords:* Astrophysics, Type Ia supernovae, Thermonuclear deflagration, Flame speed, Nuclear reaction network, White dwarf, Phlegethon.
+  *Keywords:* Astrophysics, #Glsl("snia"), #Glsl("deflagration"), #Glsl("flame_speed"), #Glsl("network"), #Glsl("wd"), Phlegethon.
 
   #v(1fr)
 

@@ -1,37 +1,131 @@
-#import "@preview/glossarium:0.5.0": make-glossary, print-glossary
-
-// 1. Initialisation du glossaire pour Typst
-#show: make-glossary
-
-// 2. Définition de tes termes techniques (FR -> EN)
-#let glossary-entries = (
-  (
-    key: "snia",
+// 1. Dictionnaire des termes avec forme longue (long) et courte (short)
+#let entry-dict = (
+  snia: (
     short: "SN Ia",
-    long: "Type Ia Supernova",
-    description: [Supernova de type Ia. Explosion thermonucléaire d'une naine blanche carbone-oxygène ayant dépassé la masse de Chandrasekhar dans un système binaire.]
+    long: "type Ia supernova",
+    fr: "Supernova de type Ia",
+    def: [Thermonuclear explosion of a carbon-oxygen white dwarf exceeding the Chandrasekhar mass limit in a binary system.]
   ),
-  (
-    key: "wd",
+  wd: (
     short: "WD",
-    long: "White Dwarf",
-    description: [Naine blanche. Cœur résiduel compact et dégénéré d'une étoile de masse faible à intermédiaire. La masse maximale d'une naine blanche est la masse de Chandrasekhar, soit environ 1,4 masses solaires.]
+    long: "white dwarf",
+    fr: "Naine blanche",
+    def: [Compact and degenerate stellar remnant of a low-to-intermediate-mass star. The maximum mass of a white dwarf is the Chandrasekhar limit ($approx 1.4 M_top$).]
   ),
-  (
-    key: "deflagration",
-    short: "Déflagration thermonucléaire",
-    long: "Thermonuclear deflagration",
-    description: [Régime de combustion subsonique entretenu par le couplage entre conduction thermique et réactions de fusion thermonucléaires.]
+  deflagration: (
+    short: "deflagration",
+    long: "thermonuclear deflagration",
+    fr: "Déflagration thermonucléaire",
+    def: [Subsonic combustion regime sustained by thermal conduction coupled with nuclear fusion reactions.]
   ),
-  (
-    key: "eos",
+  eos: (
     short: "EoS",
-    long: "Equation of State",
-    description: [Équation d'état. Relation thermodynamique reliant la pression, la masse volumique et la température de la matière stellaire.]
+    long: "equation of state",
+    fr: "Équation d'état",
+    def: [Thermodynamic relation connecting pressure, mass density, and temperature of stellar matter.]
+  ),
+  network: (
+    short: "network",
+    long: "nuclear reaction network",
+    fr: "Réseau thermonucléaire",
+    def: [Set of nuclear reactions and their rates that describe the evolution of stellar matter in thermonuclear fusion reactions.]
+  ),
+  flame_speed: (
+    short: "flame speed",
+    long: "laminar flame speed",
+    fr: "Vitesse de flamme laminaire",
+    def: [Speed at which a flame propagates through a combustible mixture under idealized conditions in a laminar flow.]
   ),
 )
 
-// 3. Affichage du glossaire dans le document
-#heading(level: 1, numbering: none)[Glossary / Glossaire]
+// =================================================================
+// 2. FONCTIONS DE RÉFÉRENCE DANS LE TEXTE
+// =================================================================
 
-#print-glossary(glossary-entries)
+// Utilitaire : met la première lettre en majuscule (pour début de phrase)
+#let cap(s) = {
+  let chars = s.clusters()
+  if chars.len() > 0 {
+    upper(chars.at(0)) + chars.slice(1).join()
+  } else {
+    s
+  }
+}
+
+// --- Formes minuscules (milieu de phrase) ---
+#let gls(key) = {
+  let e = entry-dict.at(key)
+  link(label(key))[#e.short]
+}
+
+#let glsf(key) = {
+  let e = entry-dict.at(key)
+  if e.short != e.long {
+    link(label(key))[#e.long (#e.short)]
+  } else {
+    link(label(key))[#e.long]
+  }
+}
+
+#let glsl(key) = {
+  let e = entry-dict.at(key)
+  link(label(key))[#e.long]
+}
+
+// --- Formes Majuscules (début de phrase) ---
+#let Gls(key) = {
+  let e = entry-dict.at(key)
+  link(label(key))[#cap(e.short)]
+}
+
+#let Glsf(key) = {
+  let e = entry-dict.at(key)
+  if e.short != e.long {
+    link(label(key))[#cap(e.long) (#e.short)]
+  } else {
+    link(label(key))[#cap(e.long)]
+  }
+}
+
+#let Glsl(key) = {
+  let e = entry-dict.at(key)
+  link(label(key))[#cap(e.long)]
+}
+
+// --- Interception automatique des @clé dans le texte ---
+#let setup-glossary-refs(body) = {
+  show ref: it => {
+    let key = str(it.target)
+    if key in entry-dict {
+      gls(key)
+    } else {
+      it
+    }
+  }
+  body
+}
+
+// =================================================================
+// 3. AFFICHAGE DU TABLEAU DU GLOSSAIRE
+// =================================================================
+= Glossary / Glossaire
+
+#v(1.5em)
+
+#table(
+  columns: (1.5fr, 1.3fr, 2.7fr),
+  stroke: (x, y) => if y == 0 { (bottom: 1.5pt + black) } else { 0.5pt + luma(220) },
+  fill: (x, y) => if y == 0 { rgb("f8f9fa") } else { none },
+  inset: 9pt,
+  align: (x, y) => if y == 0 { center + horizon } else { left + top },
+  
+  [*English Term (Acronym)*], [*French Translation*], [*Definition*],
+  
+  ..entry-dict.pairs().map(((key, entry)) => (
+    [
+      *#cap(entry.long) (#entry.short)* #label(key)
+    ], 
+    [#entry.fr], 
+    entry.def
+  )).flatten()
+)
