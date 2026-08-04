@@ -5,6 +5,8 @@
 #import "backmatter/glossaire.typ": setup-glossary-refs
 #import "backmatter/glossaire.typ": gls, glsf, glsl, Gls, Glsf, Glsl
 
+// Active la prise en charge des @clé dans tout le document
+#show: setup-glossary-refs
 
 // Active la prise en charge des @clé pour le glossaire
 #show: setup-glossary-refs

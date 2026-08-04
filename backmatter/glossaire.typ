@@ -39,10 +39,9 @@
 )
 
 // =================================================================
-// 2. FONCTIONS DE RÉFÉRENCE DANS LE TEXTE
+// 2. FONCTIONS DE RÉFÉRENCE ET DE SUIVI
 // =================================================================
 
-// Utilitaire : met la première lettre en majuscule (pour début de phrase)
 #let cap(s) = {
   let chars = s.clusters()
   if chars.len() > 0 {
@@ -52,47 +51,50 @@
   }
 }
 
+// Balise invisible enregistrée pour l'index
+#let mark(key) = [#metadata((key: key))<gls-ref>]
+
 // --- Formes minuscules (milieu de phrase) ---
 #let gls(key) = {
   let e = entry-dict.at(key)
-  link(label(key))[#e.short]
+  [#link(label(key))[#e.short]#mark(key)]
 }
 
 #let glsf(key) = {
   let e = entry-dict.at(key)
   if e.short != e.long {
-    link(label(key))[#e.long (#e.short)]
+    [#link(label(key))[#e.long (#e.short)]#mark(key)]
   } else {
-    link(label(key))[#e.long]
+    [#link(label(key))[#e.long]#mark(key)]
   }
 }
 
 #let glsl(key) = {
   let e = entry-dict.at(key)
-  link(label(key))[#e.long]
+  [#link(label(key))[#e.long]#mark(key)]
 }
 
 // --- Formes Majuscules (début de phrase) ---
 #let Gls(key) = {
   let e = entry-dict.at(key)
-  link(label(key))[#cap(e.short)]
+  [#link(label(key))[#cap(e.short)]#mark(key)]
 }
 
 #let Glsf(key) = {
   let e = entry-dict.at(key)
   if e.short != e.long {
-    link(label(key))[#cap(e.long) (#e.short)]
+    [#link(label(key))[#cap(e.long) (#e.short)]#mark(key)]
   } else {
-    link(label(key))[#cap(e.long)]
+    [#link(label(key))[#cap(e.long)]#mark(key)]
   }
 }
 
 #let Glsl(key) = {
   let e = entry-dict.at(key)
-  link(label(key))[#cap(e.long)]
+  [#link(label(key))[#cap(e.long)]#mark(key)]
 }
 
-// --- Interception automatique des @clé dans le texte ---
+// --- Interception automatique des @clé ---
 #let setup-glossary-refs(body) = {
   show ref: it => {
     let key = str(it.target)
@@ -106,7 +108,51 @@
 }
 
 // =================================================================
-// 3. AFFICHAGE DU TABLEAU DU GLOSSAIRE
+// 3. GENERATION DE L'INDEX
+// =================================================================
+#let make-index() = {
+  heading(level: 1)[Index]
+  v(1.5em)
+
+  // Annule le retrait de paragraphe uniquement pour la page d'index
+  set par(first-line-indent: 0pt)
+  
+  context {
+    let refs = query(<gls-ref>)
+    let key-pages = (:)
+
+    for r in refs {
+      let k = r.value.key
+      let pg = r.location().page()
+      if k in key-pages {
+        if not key-pages.at(k).contains(pg) {
+          key-pages.at(k).push(pg)
+        }
+      } else {
+        key-pages.insert(k, (pg,))
+      }
+    }
+
+    let sorted-keys = entry-dict.keys().sorted(key: k => entry-dict.at(k).long)
+
+    for k in sorted-keys {
+      if k in key-pages {
+        let entry = entry-dict.at(k)
+        let pages-str = key-pages.at(k).map(str).join(", ")
+        
+        [
+          *#cap(entry.long)* (#entry.short)
+          #box(width: 1fr, repeat[ . ])
+          #pages-str
+        ]
+        parbreak()
+      }
+    }
+  }
+}
+
+// =================================================================
+// 4. TABLEAU DU GLOSSAIRE
 // =================================================================
 = Glossary / Glossaire
 
