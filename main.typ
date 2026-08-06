@@ -74,26 +74,25 @@
 
 // --- CHAPITRES PRINCIPAUX ---
 
-#include "chapitres/introduction.typ"
+#include "chapitres/01-introduction.typ"
 #pagebreak()
 
-#include "chapitres/description-travail.typ"
+#include "chapitres/02-work-environment.typ"
 #pagebreak()
 
-// Section Contribution (regroupant les fichiers de votre sous-dossier)
-= Contribution
-
-#include "chapitres/contribution/introduction.typ"
-#include "chapitres/contribution/methodologie.typ"
-#include "chapitres/contribution/resultats.typ"
-#include "chapitres/contribution/discussion.typ"
-
-// Le planning de stage doit se trouver à la fin du développement
-#include "chapitres/contribution/planning.typ"
-#include "chapitres/contribution/conclusion.typ"
+#include "chapitres/03-astrophysical-background.typ"
 #pagebreak()
 
-#include "chapitres/conclusion.typ"
+// Chapitre 4 : Contributions (chaque fichier gèrera ses propres sections ==)
+#include "chapitres/04-contributions/01-setup-and-preliminary-tests.typ"
+#include "chapitres/04-contributions/02-variable-ye-methodology.typ"
+#include "chapitres/04-contributions/03-analysis-pipeline.typ"
+#include "chapitres/04-contributions/04-challenges-and-pitfalls.typ"
+#include "chapitres/04-contributions/05-project-timeline.typ"
+#include "chapitres/04-contributions/06-current-results.typ"
+#pagebreak()
+
+#include "chapitres/05-conclusion.typ"
 #pagebreak()
 
 
