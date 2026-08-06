@@ -1,4 +1,4 @@
-= Acknowledgements
+#heading(level: 1, numbering: none)[Acknowledgements]
 
 I would first like to express my gratitude towards Prof. Dr. Friedrich K. Röpke, head of the Physics of Stellar Objects (PSO) research group and my internship supervisor, for his warm welcome at HITS and for providing me with the opportunity to carry out this research project, as well as sharing his knowledge and expertise in the field of astrophysics and science with me.
 

@@ -1,4 +1,5 @@
 // 1. Dictionnaire des termes avec forme longue (long) et courte (short)
+#heading(level: 1, numbering: none)[Glossary / Glossaire]
 #let entry-dict = (
   snia: (
     short: "SN Ia",
@@ -35,6 +36,21 @@
     long: "laminar flame speed",
     fr: "Vitesse de flamme laminaire",
     def: [Speed at which a flame propagates through a combustible mixture under idealized conditions in a laminar flow.]
+  ),
+  hpc: (
+    short: "HPC",
+    long: "High-Performance Computing",
+    desc: "Computing infrastructure using supercomputers or parallel processing clusters to run complex, computationally intensive simulations.",
+  ),
+  vpn: (
+    short: "VPN",
+    long: "Virtual Private Network",
+    desc: "Encrypted network connection that enables secure access to internal institute servers and remote resources.",
+  ),
+  ssh: (
+    short: "SSH",
+    long: "Secure Shell",
+    desc: "Cryptographic network protocol used for secure remote command-line login and system administration on HPC clusters.",
   ),
 )
 
@@ -111,7 +127,7 @@
 // 3. GENERATION DE L'INDEX
 // =================================================================
 #let make-index() = {
-  heading(level: 1)[Index]
+  heading(level: 1, numbering: none)[Index]
   v(1.5em)
 
   // Annule le retrait de paragraphe uniquement pour la page d'index
@@ -154,24 +170,23 @@
 // =================================================================
 // 4. TABLEAU DU GLOSSAIRE
 // =================================================================
-= Glossary / Glossaire
 
 #v(1.5em)
 
 #table(
-  columns: (1.5fr, 1.3fr, 2.7fr),
+  columns: (1.2fr, 1.8fr, 2.7fr),
   stroke: (x, y) => if y == 0 { (bottom: 1.5pt + black) } else { 0.5pt + luma(220) },
   fill: (x, y) => if y == 0 { rgb("f8f9fa") } else { none },
   inset: 9pt,
   align: (x, y) => if y == 0 { center + horizon } else { left + top },
   
-  [*English (Acronym)*], [*French*], [*Definition*],
+  [*Acronym*], [*Full Name*], [*Definition*],
   
   ..entry-dict.pairs().map(((key, entry)) => (
     [
-      *#cap(entry.long) (#entry.short)* #label(key)
+      *#entry.short* #label(key)
     ], 
-    [#entry.fr], 
-    entry.def
+    [#cap(entry.long)], 
+    [#entry.at("desc", default: entry.at("def", default: ""))]
   )).flatten()
 )

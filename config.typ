@@ -69,6 +69,7 @@
   set par(justify: true, first-line-indent: 1.5cm, leading: 0.8em)
 
   // Style des titres
+  set heading(numbering: "1.1")
   show heading.where(level: 1): it => block(width: 100%, below: 2em)[
     #set text(size: 22pt, weight: "bold")
     #it.body
@@ -78,7 +79,7 @@
     #it.body
   ]
   show heading.where(level: 3): it => block(below: 1em)[
-    #set text(size: 12pt, weight: "bold-italic")
+    #set text(size: 12pt, weight: "bold", style: "italic")
     #it.body
   ]
 

@@ -48,14 +48,14 @@
 // Résumé / Abstract + Mots-clés (10 lignes chacun environ)
 #page[
 #v(2fr)
-  == Abstract
+#heading(level: 1, numbering: none)[Abstract]
   Type Ia supernovae, originating from the explosion of a #glsf("wd") in a binary system, are standard candles used to measure cosmological distances and study dark energy. Understanding the physics of their explosion requires precise modeling of #glsf("deflagration") flames. This work presents a multiparametric study of these flame speeds using the stellar hydrodynamics code Phlegethon @leidi2026. By extending existing models @timmes1992 @schwab2020, we established a new formulation for the #glsf("flame_speed") that accounts for the ambient density, chemical composition, and electron fraction of the medium. This extension enables the study of deflagration flame speeds in stellar structures that evolve both spatially and temporally.
 
   *Keywords:* Astrophysics, #Glsl("snia"), #Glsl("deflagration"), #Glsl("flame_speed"), #Glsl("network"), #Glsl("wd"), Phlegethon.
 
   #v(1fr)
 
-  == Résumé
+#heading(level: 1, numbering: none)[Résumé]
 
   Les supernovae de type Ia, issues de l'explosion d'une naine blanche en système binaire, sont des _chandelles standard_ utilisées pour la mesure des distances cosmologiques et l'étude de l'énergie noire. Comprendre la physique de leur explosion nécessite une modélisation précise des flammes de déflagration thermonucléaire. Ce travail présente une étude multiparamétrique de la vitesse de ces flammes à l'aide du code d'hydrodynamique stellaire Phlegethon @leidi2026. En étendant les modèles existants @timmes1992 @schwab2020, nous avons établi une nouvelle formulation de la vitesse de flamme laminaire en prenant en compte la densité, la composition chimique et la fraction électronique du milieu. Cette extension permet d'étudier la vitesse de déflagration de structures stellaires évolutives spatialement et temporellement.
 
@@ -64,7 +64,10 @@
 ]
 
 // Tables
-#outline(title: [Table of content], indent: auto)
+#heading(level: 1, numbering: none)[Table of contents]
+#v(1fr)
+#outline(title: none, indent: auto)
+#v(1fr)
 #pagebreak()
 
 #outline(title: [List of figures], target: figure.where(kind: image))
@@ -84,12 +87,12 @@
 #pagebreak()
 
 // Chapitre 4 : Contributions (chaque fichier gèrera ses propres sections ==)
-#include "chapitres/04-contributions/01-setup-and-preliminary-tests.typ"
-#include "chapitres/04-contributions/02-variable-ye-methodology.typ"
-#include "chapitres/04-contributions/03-analysis-pipeline.typ"
-#include "chapitres/04-contributions/04-challenges-and-pitfalls.typ"
-#include "chapitres/04-contributions/05-project-timeline.typ"
-#include "chapitres/04-contributions/06-current-results.typ"
+#include "chapitres/04-scientific-work/01-setup-and-preliminary-tests.typ"
+#include "chapitres/04-scientific-work/02-variable-ye-methodology.typ"
+#include "chapitres/04-scientific-work/03-analysis-pipeline.typ"
+#include "chapitres/04-scientific-work/04-challenges-and-pitfalls.typ"
+#include "chapitres/04-scientific-work/05-project-timeline.typ"
+#include "chapitres/04-scientific-work/06-current-results.typ"
 #pagebreak()
 
 #include "chapitres/05-conclusion.typ"
