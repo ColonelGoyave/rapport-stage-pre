@@ -52,6 +52,21 @@
     long: "Secure Shell",
     desc: "Cryptographic network protocol used for secure remote command-line login and system administration on HPC clusters.",
   ),
+  nse: (
+    short: "NSE",
+    long: "Nuclear Statistical Equilibrium",
+    desc: "State reached at extremely high temperatures where forward and reverse nuclear reactions balance out, setting isotopic abundances strictly via thermodynamic state variables.",
+  ),
+  hedp: (
+    short: "HEDP",
+    long: "High Energy Density Physics",
+    desc: "Study of matter under extreme conditions of pressure and density, relevant to both stellar interiors and inertial confinement fusion.",
+  ),
+  icf: (
+    short: "ICF",
+    long: "Inertial Confinement Fusion",
+    desc: "A type of fusion energy research that uses high-power lasers or particle beams to compress and heat micro-capsules of thermonuclear fuel.",
+  ),
 )
 
 // =================================================================
