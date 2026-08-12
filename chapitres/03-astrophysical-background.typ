@@ -1,6 +1,6 @@
 #import "../backmatter/glossaire.typ": *
 
-= Astrophysical Background and Problem Statement
+= Astrophysical Background and Problem Definition
 
 == Cosmological and Astrophysical Significance of Type Ia Supernovae
 

@@ -39,33 +39,83 @@
   ),
   hpc: (
     short: "HPC",
-    long: "High-Performance Computing",
+    long: "high-performance computing",
     desc: "Computing infrastructure using supercomputers or parallel processing clusters to run complex, computationally intensive simulations.",
   ),
   vpn: (
     short: "VPN",
-    long: "Virtual Private Network",
+    long: "virtual private network",
     desc: "Encrypted network connection that enables secure access to internal institute servers and remote resources.",
   ),
   ssh: (
     short: "SSH",
-    long: "Secure Shell",
+    long: "secure shell",
     desc: "Cryptographic network protocol used for secure remote command-line login and system administration on HPC clusters.",
   ),
   nse: (
     short: "NSE",
-    long: "Nuclear Statistical Equilibrium",
+    long: "nuclear statistical equilibrium",
     desc: "State reached at extremely high temperatures where forward and reverse nuclear reactions balance out, setting isotopic abundances strictly via thermodynamic state variables.",
   ),
   hedp: (
     short: "HEDP",
-    long: "High Energy Density Physics",
+    long: "high energy density physics",
     desc: "Study of matter under extreme conditions of pressure and density, relevant to both stellar interiors and inertial confinement fusion.",
   ),
   icf: (
     short: "ICF",
-    long: "Inertial Confinement Fusion",
+    long: "inertial confinement fusion",
     desc: "A type of fusion energy research that uses high-power lasers or particle beams to compress and heat micro-capsules of thermonuclear fuel.",
+  ),
+  ce: (
+    short: "CE",
+    long: "common envelope",
+    desc: "Transient phase in binary star evolution where both stars orbit within a shared gaseous envelope, leading to rapid orbital decay and mass loss.",
+  ),
+  phlegethon: (
+    short: "Phlegethon",
+    long: "Phlegethon",
+    desc: "Open-source Fortran finite-volume fully compressible stellar hydrodynamics code, including thermonuclear reaction networks.",
+  ),
+  lte: (
+    short: "LTE",
+    long: "local thermodynamic equilibrium",
+    description: "State in which matter and radiation are in thermal equilibrium at a local temperature T."
+  ),
+  ode: (
+    short: "ODE",
+    long: "ordinary differential equation",
+    description: "A differential equation containing one or more functions of one independent variable and its derivatives."
+  ),
+  fv: (
+    short: "FV",
+    long: "finite volume",
+    description: "Discretization method based on the integral form of conservation laws over discrete control volumes."
+  ),
+  mp5: (
+    short: "MP5",
+    long: "5th-order Monotonicity-Preserving scheme",
+    description: "High-order spatial reconstruction scheme designed to maintain high accuracy in smooth regions while preventing non-physical oscillations near shocks."
+  ),
+  ssprk3: (
+    short: "SSP-RK3",
+    long: "Strong Stability Preserving Runge-Kutta Order 3",
+    description: "High-order explicit time integration scheme that preserves non-linear stability properties."
+  ),
+  cfl: (
+    short: "CFL",
+    long: "Courant-Friedrichs-Lewy",
+    description: "Necessary stability condition for explicit time-integration of hyperbolic partial differential equations."
+  ),
+  sts: (
+    short: "STS",
+    long: "Super-Time-Stepping",
+    description: "Accelerated explicit sub-cycling technique for solving parabolic differential equations without severe time-step constraints."
+  ),
+  be: (
+    short: "BE",
+    long: "Backward Euler",
+    description: "Implicit first-order numerical method for integrating stiff differential equations."
   ),
 )
 

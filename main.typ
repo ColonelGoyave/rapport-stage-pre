@@ -2,6 +2,8 @@
 
 #import "@preview/glossarium:0.5.0": make-glossary, register-glossary
 
+#import "@preview/fletcher:0.5.2": diagram, node, edge
+
 #import "backmatter/glossaire.typ": setup-glossary-refs
 #import "backmatter/glossaire.typ": gls, glsf, glsl, Gls, Glsf, Glsl
 
@@ -17,8 +19,37 @@
 #show: make-glossary
 
 
-// ... reste de ton main.typ (titre, TOC, etc.)
+// Numérotation des équations (Chapitre.Section.Équation)
+#set math.equation(numbering: (..num) => {
+  let headings = counter(heading).get()
+  let chap = if headings.len() >= 1 { headings.at(0) } else { 1 }
+  let sec = if headings.len() >= 2 { headings.at(1) } else { 1 }
+  let eq = num.pos().first()
+  numbering("(1.1.1)", chap, sec, eq)
+})
 
+// Réinitialisation automatique du compteur d'équations à chaque sous-section (==)
+#show heading.where(level: 2): it => {
+  counter(math.equation).update(0)
+  it
+}
+
+// Numérotation des figures (Chapitre.Section.Figure)
+#set figure(numbering: (..num) => {
+  let headings = counter(heading).get()
+  let chap = if headings.len() >= 1 { headings.at(0) } else { 1 }
+  let sec = if headings.len() >= 2 { headings.at(1) } else { 1 }
+  let fig = num.pos().first()
+  numbering("1.1.1", chap, sec, fig)
+})
+
+// Reset du compteur de figures à chaque nouvelle sous-section (==)
+#show heading.where(level: 2): it => {
+  counter(figure.where(kind: image)).update(0)
+  it
+}
+
+// ... reste de ton main.typ (titre, TOC, etc.)
 
 #show: project.with(
   title: "Thermonuclear deflagration flames\nin type Ia supernovaes",
@@ -87,12 +118,15 @@
 #pagebreak()
 
 // Chapitre 4 : Contributions (chaque fichier gèrera ses propres sections ==)
-#include "chapitres/04-scientific-work/01-setup-and-preliminary-tests.typ"
-#include "chapitres/04-scientific-work/02-variable-ye-methodology.typ"
-#include "chapitres/04-scientific-work/03-analysis-pipeline.typ"
-#include "chapitres/04-scientific-work/04-challenges-and-pitfalls.typ"
-#include "chapitres/04-scientific-work/05-project-timeline.typ"
-#include "chapitres/04-scientific-work/06-current-results.typ"
+
+#include "chapitres/04-scientific-work/01-mathematical-and-numerical-formulation.typ"
+#include "chapitres/04-scientific-work/02-setup-and-preliminary-tests.typ"
+#include "chapitres/04-scientific-work/03-variable-ye-methodology.typ"
+#include "chapitres/04-scientific-work/04-analysis-pipeline.typ"
+#include "chapitres/04-scientific-work/05-challenges-and-pitfalls.typ"
+#include "chapitres/04-scientific-work/06-current-results-and-fitting.typ"
+#include "chapitres/04-scientific-work/07-project-timeline.typ"
+
 #pagebreak()
 
 #include "chapitres/05-conclusion.typ"
