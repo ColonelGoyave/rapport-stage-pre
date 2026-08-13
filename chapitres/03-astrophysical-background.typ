@@ -20,7 +20,7 @@ Even if they play a crucial role for astrophysics, the exact physical initiation
 #heading(level: 3, outlined: false)[The Multiscale Resolution Challenge and Deflagration Speed]
 In subsonic burning regimes (#gls("deflagration")), the firefront propagates via thermal conduction mediated mainly by degenerate electrons. This microphysical structure introduces a severe multiscale challenge:
 
-- The physical width of the laminar deflagration flame front ($l_f$) is dictated by microscopic transport coefficients and nuclear reaction timescales, spanning from a fraction of a millimeter to a few centimeters ($10^(-2) "to" 1 "cm"$).
+- The physical width of the laminar deflagration flame front ($l_f$) is dictated by microscopic transport coefficients and nuclear reaction timescales, spanning from a fraction of a micrometer to a few centimeters ($~ 10^(-7) "to" 10 "cm"$).
 - The global radius of the parent #gls("wd") is on the order of thousands of kilometers ($10^8"cm"$).
 
 Because global multi-dimensional hydrodynamic simulations operating at the stellar scale cannot resolve sub-centimeter flame structures, subgrid models or parameterized fits are required @timmes1992. The precise laminar flame speed $v_l$ plays a decisive role in governing the transition to detonation and determining whether the star undergoes a complete explosion or a gravitational collapse @holas2026.

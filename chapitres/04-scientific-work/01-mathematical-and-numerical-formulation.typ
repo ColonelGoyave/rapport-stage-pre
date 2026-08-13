@@ -259,12 +259,11 @@ As illustrated in @fig:code_pipeline, the simulation setup is structured across 
           *3. Output & Diagnostics* \
           #v(2pt)
           #text(size: 8.5pt)[
-            - Radial profile outputs (`RPROFS` files) for 1D structure diagnostics \
+            - Radial profile outputs (`RPROFS`: files storing 1D radial profiles (density, temperature, pressure, abundances) as a function of radius at given time steps) \
             - Full-grid HDF5 and binary checkpoint / restart dumps \
-            - Real-time global conservation logging
           ]
         ]
-      ]
+      ] 
 
       #v(-4pt)
       #align(center)[#text(size: 14pt, fill: luma(100))[↓]]
@@ -340,16 +339,16 @@ The primary compile-time preprocessor options utilized for the physical modeling
   caption: [Key compile-time preprocessor flags configured in the Phlegethon `Makefile` for stellar hydrodynamics simulations.]
 ) <tbl:makefile_flags>
 
+Key parameter blocks defined in `Makefile` include:
 
-#heading(level: 4, outlined: false, numbering: none)[Runtime Parameters and Run Configuration (`run.genoa`)]
-
-While physical solvers and numerical schemes are compiled directly into the executable, run-specific physical conditions, boundary settings, and resolution parameters are controlled via the `run.genoa` input configuration file. 
-
-Key parameter blocks defined in `run.genoa` include:
-- *Grid Resolution and Extent:* Configuration of the spatial domain boundaries, cell counts ($N_x, N_y, N_z$), and coordinate geometry.
+- *Grid Resolution and Extent:* Configuration of the spatial domain boundaries, cell counts ($"nx1, nx2, nx3"$), and coordinate geometry.
 - *Courant Parameter:* Setting `cfl_make=0.8_rp` ensures strict compliance with the CFL hydrodynamic stability criterion.
 - *Low-Mach Numerical Dissipation Cutoff:* Setting `Mach_cutoff_make=1.0e-4_rp` scales wave-dissipation terms in subsonic convective flows to minimize artificial damping.
 - *Physical Boundary Conditions:* Definition of reflective, outflow, or hydrostatic boundary states at domain boundaries.
 - *I/O and Diagnostics Controls:* Frequency of binary/HDF5 data dumps, checkpoint restarts, and integrated energy/mass conservation logging.
 
 #place.flush()
+
+#heading(level: 4, outlined: false, numbering: none)[Runtime Parameters and Run Configuration (`run.genoa`)]
+
+While physical solvers and numerical schemes are compiled directly into the executable, the HPC-control parameters are controlled via the `run.genoa` input configuration file, in which are defined things such as the number of nodes of the cluster you ask for, the number of cores per node, the number of MPI tasks, and the command to launch the executable (e.g., `mpirun`). This separation allows for flexible execution on different HPC clusters without modifying the code.
