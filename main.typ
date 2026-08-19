@@ -120,12 +120,12 @@
 // Chapitre 4 : Contributions (chaque fichier gèrera ses propres sections ==)
 
 #include "chapitres/04-scientific-work/01-mathematical-and-numerical-formulation.typ"
-#include "chapitres/04-scientific-work/02-setup-and-preliminary-tests.typ"
-#include "chapitres/04-scientific-work/03-variable-ye-methodology.typ"
-#include "chapitres/04-scientific-work/04-analysis-pipeline.typ"
-#include "chapitres/04-scientific-work/05-challenges-and-pitfalls.typ"
-#include "chapitres/04-scientific-work/06-current-results-and-fitting.typ"
-#include "chapitres/04-scientific-work/07-project-timeline.typ"
+#include "chapitres/04-scientific-work/02-setup-and-preliminary-numerical-tests.typ"
+#include "chapitres/04-scientific-work/03-specator-species-methodology-for-variable-Ye.typ"
+#include "chapitres/04-scientific-work/04-development-of-the-data-post-processing-method.typ"
+#include "chapitres/04-scientific-work/05-physical-challenges-and-diagnostic-of-transient-regimes.typ"
+#include "chapitres/04-scientific-work/06-results-and-analysis.typ"
+#include "chapitres/04-scientific-work/07-project-planning-and-chronological-overview.typ"
 
 #pagebreak()
 

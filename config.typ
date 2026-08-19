@@ -68,20 +68,21 @@
   set text(font: "Liberation Serif", size: 12pt, lang: "en")
   set par(justify: true, first-line-indent: 1.5cm, leading: 0.8em)
 
-  // Style des titres
+// Style des titres
   set heading(numbering: "1.1")
   show heading.where(level: 1): it => block(width: 100%, below: 2em)[
     #set text(size: 22pt, weight: "bold")
-    #it.body
+    #if it.numbering != none [#counter(heading).display(it.numbering) #h(0.5em)]#it.body
   ]
   show heading.where(level: 2): it => block(below: 1.5em)[
     #set text(size: 14pt, weight: "bold")
-    #it.body
+    #if it.numbering != none [#counter(heading).display(it.numbering) #h(0.5em)]#it.body
   ]
   show heading.where(level: 3): it => block(below: 1em)[
     #set text(size: 12pt, weight: "bold", style: "italic")
-    #it.body
+    #if it.numbering != none [#counter(heading).display(it.numbering) #h(0.5em)]#it.body
   ]
+
 
   // --- PAGE DE TITRE / PREMIÈRE DE COUVERTURE ---
   page(header: none, footer: none)[
