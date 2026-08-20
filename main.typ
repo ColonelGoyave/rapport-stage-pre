@@ -34,6 +34,7 @@
   it
 }
 
+
 // Numérotation des figures (Chapitre.Section.Figure)
 #set figure(numbering: (..num) => {
   let headings = counter(heading).get()
@@ -121,7 +122,7 @@
 
 #include "chapitres/04-scientific-work/01-mathematical-and-numerical-formulation.typ"
 #include "chapitres/04-scientific-work/02-setup-and-preliminary-numerical-tests.typ"
-#include "chapitres/04-scientific-work/03-specator-species-methodology-for-variable-Ye.typ"
+#include "chapitres/04-scientific-work/03-spectator-species-methodology-for-variable-Ye.typ"
 #include "chapitres/04-scientific-work/04-development-of-the-data-post-processing-method.typ"
 #include "chapitres/04-scientific-work/05-physical-challenges-and-diagnostic-of-transient-regimes.typ"
 #include "chapitres/04-scientific-work/06-results-and-analysis.typ"

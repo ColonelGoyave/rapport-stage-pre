@@ -117,6 +117,26 @@
     long: "Backward Euler",
     description: "Implicit first-order numerical method for integrating stiff differential equations."
   ),
+  mpi: (
+  short: "MPI",
+  long: "Message Passing Interface",
+  desc: "Standardized library specification for distributed-memory parallel programming across compute nodes.",
+  ),
+  openmp: (
+    short: "OpenMP",
+    long: "OpenMP",
+    desc: "API for shared-memory multi-threaded parallel programming within a single compute node.",
+  ),
+  jina_reaclib: (
+    short: "JINA REACLIB",
+    long: "JINA REACLIB",
+    desc: "Compiled database of thermonuclear reaction rates for astrophysical applications, maintained by the Joint Institute for Nuclear Astrophysics.",
+  ),
+  main_sequence: (
+  short: "main sequence",
+  long: "main sequence",
+  desc: "Core hydrogen-burning phase of stellar evolution during which a star's luminosity and temperature are set primarily by its mass, occupying a well-defined band on the Hertzsprung-Russell diagram.",
+),
 )
 
 // =================================================================

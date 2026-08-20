@@ -74,10 +74,13 @@
     #set text(size: 22pt, weight: "bold")
     #if it.numbering != none [#counter(heading).display(it.numbering) #h(0.5em)]#it.body
   ]
-  show heading.where(level: 2): it => block(below: 1.5em)[
-    #set text(size: 14pt, weight: "bold")
-    #if it.numbering != none [#counter(heading).display(it.numbering) #h(0.5em)]#it.body
-  ]
+  show heading.where(level: 2): it => {
+    counter(math.equation).update(0)
+    block(below: 1.5em)[
+      #set text(size: 14pt, weight: "bold")
+      #if it.numbering != none [#counter(heading).display(it.numbering) #h(0.5em)]#it.body
+    ]
+  }
   show heading.where(level: 3): it => block(below: 1em)[
     #set text(size: 12pt, weight: "bold", style: "italic")
     #if it.numbering != none [#counter(heading).display(it.numbering) #h(0.5em)]#it.body
